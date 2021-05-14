@@ -46,18 +46,6 @@
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Red Ring';
-  src: url('~/assets/fonts/RedRing/RedRing-Black.eot');
-  src: local('Red Ring Black'), local('RedRing-Black'),
-      url('~/assets/fonts/RedRing/RedRing-Black.eot?#iefix') format('embedded-opentype'),
-      url('~/assets/fonts/RedRing/RedRing-Black.woff2') format('woff2'),
-      url('~/assets/fonts/RedRing/RedRing-Black.woff') format('woff'),
-      url('~/assets/fonts/RedRing/RedRing-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-
 html{
   font-size: 1px;/*for using REM units*/
 }
