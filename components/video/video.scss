@@ -1,0 +1,67 @@
+@import '~/assets/scss/utilities/variables';
+@import '~/assets/scss/utilities/mixins';
+
+.video {
+  @include mq(tablet) {
+    display: flex;
+  }
+
+  &__text {
+    background: $primary;
+    color: white;
+    padding: 33rem 19rem 38rem;
+
+    @include mq(tablet) {
+      width: 50%;
+      order: 2;
+      position: relative;
+    }
+
+    &-inner {
+      @include mq(tablet) {
+        @include center(both);
+        width: 320px;
+      }
+
+      @include mq(tablet-wide) {
+        width: 420px;
+      }
+    }
+
+    h2 {
+      margin-bottom: 11rem;
+    }
+  }
+
+  &__desc {
+    font-size: 13rem;
+  }
+
+  &__media {
+    width: 100%;
+    height: 188px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+    @include mq(tablet-small) {
+      height: 250px;
+    }
+
+    @include mq(tablet) {
+      width: 50%;
+      order: 1;
+      height: 420px;
+    }
+  }
+
+  &__button {
+    @include center(both);
+    transition: transform .3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+}

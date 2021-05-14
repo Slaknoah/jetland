@@ -1,0 +1,68 @@
+@import '~/assets/scss/utilities/variables';
+@import '~/assets/scss/utilities/mixins';
+
+.partners {
+  padding: 30rem 0 32rem;
+  background: $greenishGray;
+
+  @include mq(tablet) {
+    padding: 49px 0 72rem;
+  }
+
+  &__header {
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 17rem;
+
+    @include mq(tablet) {
+      margin-bottom: 35rem;
+    }
+
+    .hide-mobile {
+      display: none;
+
+      @include mq(tablet) {
+        display: inline;
+      }
+    }
+
+    &--highlight {
+      color: $primary;
+      margin-left: 13rem;
+      display: inline-block;
+      border-bottom: 2px dotted $primary;
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__list-item {
+    min-width: 133rem;
+    height: 96rem;
+    background-color: white;
+    margin-bottom: 13rem;
+    position: relative;
+    transition: background-color 0.3s ease;
+
+    @include mq(tablet) {
+      min-width: 169rem;
+      height: 121rem;
+    }
+
+    &:hover {
+      background-color: $primary;
+
+      svg, path { fill: white }
+    }
+
+    svg, path { transition: fill 0.3s ease }
+
+    svg {
+      @include center(both);
+    }
+  }
+}

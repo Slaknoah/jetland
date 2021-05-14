@@ -1,0 +1,151 @@
+@import '~/assets/scss/utilities/variables';
+@import '~/assets/scss/utilities/mixins';
+
+.footer {
+  width: 100%;
+  background: black;
+  color: white;
+  padding: 22rem 0 33rem;
+
+  @include mq('tablet-wide') {
+    padding: 54rem 0 57rem;
+  }
+
+  &__row {
+    @include mq('tablet-wide') {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__arrow {
+    @include mq('tablet-wide') {
+      display: none;
+    }
+  }
+
+  &__logo {
+    @include mq('tablet-wide') {
+      svg {
+        width: 218px;
+      }
+    }
+  }
+
+  &__menu {
+    @include mq('tablet-wide') {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13rem;
+
+      li {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  &__col {
+    text-align: center;
+    margin-bottom: 23rem;
+
+    @include mq('tablet-wide') {
+      text-align: left;
+      margin-bottom: 0;
+
+      &:first-child {
+        width: 218rem;
+      }
+      &:nth-child(2) {
+        width: 258rem;
+      }
+      &:nth-child(3) {
+        width: 267rem;
+      }
+      &:nth-child(5) {
+        width: 233rem;
+      }
+    }
+
+    &:first-child {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--desktop {
+      display: none;
+
+      @include mq('tablet-wide') {
+        display: block;
+      }
+    }
+  }
+
+  &__button.btn {
+    padding: {
+      left: 20rem;
+      right: 20rem;
+    };
+
+    @include mq('tablet-wide') {
+      padding: {
+        left: 34rem;
+        right: 35rem;
+      };
+    }
+
+    div {
+      margin-right: 10rem;
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    font-size: 12rem;
+    line-height: 15rem;
+    width: 100%;
+    display: block;
+
+    @include mq('tablet-wide') {
+      font-size: 13rem;
+      line-height: 17rem;
+    }
+  }
+
+  &__brands {
+    width: 100%;
+    margin-top: 23rem;
+
+    &-item {
+      margin: 0 9rem;
+
+      &:first-child { margin-left: 0; }
+    }
+
+    @include mq('tablet-wide') {
+      margin-top: 18rem;
+    }
+  }
+
+  &__socials {
+    a {
+      margin: 0 7rem;
+    }
+    &--desktop { display: none; }
+
+    @include mq('tablet-wide') {
+      display: none;
+
+      &--desktop {
+        display: block;
+        width: 100%;
+        margin-top: 32rem;
+      }
+      // margin-top: -2em;
+    }
+  }
+}

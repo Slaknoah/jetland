@@ -1,0 +1,25 @@
+// Reset
+@import 'base/reset';
+
+// Utilities
+@import 'utilities/variables';
+@import 'utilities/mixins';
+
+// Base
+@import 'base/typography';
+
+button {
+  background-color: $primary;
+}
+
+.container {
+  padding-left: 19rem;
+  padding-right: 19rem;
+
+
+  @media only screen and (min-width: 1281px) {
+    max-width: 1281px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}

@@ -1,0 +1,58 @@
+@import '~/assets/scss/utilities/variables';
+@import '~/assets/scss/utilities/mixins';
+
+.advantages {
+  padding: 28rem 0 21rem;
+
+  @include mq(tablet) {
+    padding: 60rem 0 65rem;
+  }
+
+  &__items {
+    @include mq(tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 21rem;
+
+    @include mq(tablet) {
+      margin-bottom: 37rem;
+    }
+  }
+
+  &__item {
+    background-color: $greenishGray;
+    margin-bottom: 11rem;
+    min-height: 175rem;
+    position: relative;
+
+    @include mq(tablet) {
+      width: 32%;
+    }
+
+    &-content {
+      width: 75%;
+      @include center(both);
+    }
+
+    &-header {
+      margin-bottom: 11rem;
+
+      @include mq(tablet) {
+        margin-bottom: 19rem;
+      }
+    }
+
+    &-text {
+      font-size: 13rem;
+
+      @include mq(tablet) {
+        font-weight: 300;
+      }
+    }
+  }
+}

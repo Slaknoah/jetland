@@ -1,0 +1,91 @@
+@import '~/assets/scss/utilities/variables';
+@import '~/assets/scss/utilities/mixins';
+
+.calculator {
+  background: $greenishGray;
+  position: relative;
+
+  h2 {
+    margin-bottom: 24rem;
+  }
+
+  &__card {
+    @include center(horizontal);
+    background: white;
+    padding: 26rem 26rem 36rem;
+    top: -59rem;
+    width: calc( 100% - 38rem);
+
+    @media only screen and (min-width: 1281px) {
+      max-width: 1281px;
+    }
+    @include mq(tablet) {
+      top: -211rem;
+    }
+
+    h2 {
+      text-align: center;
+    }
+  }
+
+  &__input {
+    margin-bottom: 42rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    @include mq(tablet) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__form {
+    margin-bottom: 35rem;
+
+    @include mq(tablet) {
+      width: 65%;
+    }
+  }
+
+  &__append {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 300;
+    font-size: 13rem;
+  }
+
+  &__result {
+    text-align: center;
+
+    @include mq(tablet) {
+      width: 35%;
+    }
+
+    &-label {
+      font-weight: 300;
+      font-size: 13rem;
+      margin-bottom: 11rem;
+    }
+
+    &-value {
+      font-weight: 500;
+      font-size: 25rem;
+      margin-bottom: 24rem;
+
+      .underline {
+        width: 129rem;
+        height: 3px;
+        background: black;
+        margin: 12rem auto 0;
+
+        @include mq(tablet) {
+          margin: 20rem auto 0;
+        }
+      }
+    }
+  }
+}

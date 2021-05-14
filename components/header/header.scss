@@ -1,0 +1,34 @@
+@import '~/assets/scss/utilities/variables';
+@import '~/assets/scss/utilities/mixins';
+
+.header {
+  padding: {
+    top: 1em;
+    bottom: 1em;
+  }
+  background: white;
+
+  @include mq('tablet-wide') {
+    padding: {
+      top: 34rem;
+      bottom: 34rem;
+    };
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 2;
+
+    @include mq('tablet-wide') {
+      svg {
+        width: 305px;
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+@import '~/assets/scss/utilities/variables';
+@import '~/assets/scss/utilities/mixins';
+
+.how-to-steps {
+  $this: &;
+
+  padding: 37rem 0 100rem;
+  color: white;
+  background: {
+    color: black;
+    image: url(~/assets/img/how_to_bg.png);
+    position: center;
+    size: cover;
+    repeat: no-repeat;
+  };
+
+  @include mq(tablet) {
+    padding: 81rem 0 284rem;
+    background: {
+      image: url(~/assets/img/how_to_bg_desktop.png);
+    };
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 30rem;
+
+    @include mq(tablet-wide) {
+      margin-bottom: 44rem;
+    }
+  }
+
+  &__list {
+    @include mq(tablet) {
+      display: flex;
+      margin: 0 auto;
+      max-width: 831px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 29rem;
+    display: flex;
+    align-items: center;
+    align-content: center;
+
+    @include mq(tablet) {
+      flex-direction: column;
+      text-align: center;
+      width: calc(100% / 3);
+      margin-bottom: 0;
+    }
+
+    &.active {
+      #{$this}__num {
+        background: $primary;
+
+        &::before {
+          @include pseudo;
+          @include center(both);
+
+          width: 60rem;
+          height: 60rem;
+          background: $primary;
+          opacity: 0.25;
+          z-index: 1;
+          border-radius: 50%;
+        }
+      }
+
+      #{$this}__text {
+        font-weight: 400;
+      }
+    }
+
+    &::before,
+    &::after {
+      @include pseudo;
+
+      width: 2px;
+      height: 50%;
+      background: $primary;
+
+      @include mq(tablet) {
+        height: 3px;
+        width: 50%;
+      }
+    }
+
+    &::before {
+      top: 0;
+      left: 19rem;
+      transform: translateY(-100%);
+
+      @include mq(tablet) {
+        top: 20rem;
+        left: 0;
+        transform: translateX(-20rem);
+      }
+    }
+
+    &::after {
+      bottom: 0;
+      left: 19rem;
+      transform: translateY(100%);
+
+      @include mq(tablet) {
+        top: 20rem;
+        right: 0;
+        left: unset;
+        transform: translateX(20rem);
+      }
+    }
+
+    &:first-child::before { display: none; }
+    &:last-child::after { display: none; }
+  }
+
+  &__num {
+    position: relative;
+    width: 40rem;
+    height: 40rem;
+    margin-right: 19rem;
+    border: 3rem solid $primary;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    @include mq(tablet) {
+      margin-right: 0;
+      margin-bottom: 18rem;
+    }
+
+    span {
+      @include center(both);
+      z-index: 2;
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+  }
+}
